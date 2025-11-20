@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Practice Inventory Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Dental Practice Stock Manager</h1>
+</header>
+
+<div class="container">
+
+    <section class="section form-section">
+        <h2>Add / Edit Item</h2>
+        <form id="itemForm">
+            <input type="hidden" id="itemId">
+
+            <label>Item Name</label>
+            <input type="text" id="name" required>
+
+            <label>Category</label>
+            <select id="category" required>
+                <option>Gloves</option>
+                <option>Filling Materials</option>
+                <option>Anesthetics</option>
+                <option>Tools & Equipment</option>
+                <option>Cleaning Supplies</option>
+                <option>Other</option>
+            </select>
+
+            <label>Quantity</label>
+            <input type="number" id="quantity" required>
+
+            <label>Low Stock Threshold</label>
+            <input type="number" id="lowStock" required>
+
+            <label>Batch Number</label>
+            <input type="text" id="batch">
+
+            <label>Expiry Date</label>
+            <input type="date" id="expiry">
+
+            <label>Barcode (optional)</label>
+            <input type="text" id="barcode">
+			<button type="button" id="scanButton">Scan with Camera</button>
+
+<div id="scannerContainer" style="display:none;">
+    <video id="scannerPreview"></video>
+    <button type="button" id="stopScanner">Stop Scanning</button>
+</div>
+
+
+            <button type="submit">Save Item</button>
+        </form>
+    </section>
+
+    <section class="section inventory-section">
+        <h2>Inventory</h2>
+        <input id="search" placeholder="Search items…">
+
+        <div class="table-wrapper">
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Cat.</th>
+                        <th>Qty</th>
+                        <th>Batch</th>
+                        <th>Expiry</th>
+                        <th>Barcode</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <h3>Low Stock Alerts</h3>
+        <ul id="lowStockList"></ul>
+    </section>
+
+    <section class="section report-section">
+        <h2>Reports</h2>
+        <button id="generateReport">Generate Report</button>
+
+        <pre id="reportOutput"></pre>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

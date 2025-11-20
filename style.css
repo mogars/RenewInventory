@@ -1,0 +1,134 @@
+/* ---------- Global ---------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+}
+
+header {
+    background: #0077cc;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    margin-bottom: 20px;
+}
+
+/* ---------- Responsive Layout ---------- */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ---------- Inputs / Buttons ---------- */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #0077cc;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #005fa3;
+}
+
+/* ---------- Table Wrapper (scroll on phones) ---------- */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* ---------- Table (desktop style) ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* helps responsive card conversion */
+}
+
+table th, table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.low {
+    color: red;
+    font-weight: bold;
+}
+
+/* ---------- Mobile Table => Cards ---------- */
+@media (max-width: 700px) {
+    table, thead {
+        display: none;
+    }
+
+    tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    #inventoryTable tbody tr {
+        background: #ffffff;
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    #inventoryTable td {
+        border: none;
+        padding: 8px 0;
+    }
+
+    #inventoryTable td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #0077cc;
+        display: block;
+    }
+}
+
+/* ---------- Make Form More Touch-Friendly ---------- */
+@media (max-width: 500px) {
+    input, select, button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+}
+
+#scannerContainer {
+    margin-top: 10px;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#scannerPreview {
+    width: 100%;
+    height: auto;
+}
+
+#stopScanner {
+    width: 100%;
+    background: red;
+    margin-top: 10px;
+}
