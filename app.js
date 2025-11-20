@@ -146,6 +146,7 @@ function startScanner() {
             type: "LiveStream",
             target: scannerPreview,
             constraints: {
+                aspectRatio: { ideal: 1.777 },
                 facingMode: "environment"  // Use back camera
             }
         },
